@@ -1,7 +1,17 @@
-package com.triforkopg.triforkopg;
+package com.triforkopg.triforkopg.Models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+
+@Entity
 public class City 
 {
+    @Id
+    @SequenceGenerator(name = "city_id_sequence", sequenceName = "city_id_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "city_id_sequence")
     private Integer _id;
     private String _name;
     private String _country;
